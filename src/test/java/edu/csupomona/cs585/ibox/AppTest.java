@@ -65,8 +65,10 @@ public class AppTest extends TestCase {
 
 			// Creating a new file
 			File file = new File(ConvertedDir + "/" + "testingFile.txt");
-			if (file.exists()) {
+			if (!file.exists()) {
 				file.createNewFile();
+			}else{
+				System.out.println("already exist");
 			}
 
 			// Updating the file by adding text
