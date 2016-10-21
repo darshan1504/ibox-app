@@ -65,6 +65,9 @@ public class AppTest extends TestCase {
 
 			// Creating a new file
 			File file = new File(ConvertedDir + "/" + "testingFile.txt");
+			if (file.exists()) {
+				file.createNewFile();
+			}
 
 			// Updating the file by adding text
 			PrintWriter writeInTheFile = new PrintWriter(file);
@@ -77,7 +80,6 @@ public class AppTest extends TestCase {
 			verify(DriveSync, atLeastOnce()).updateFile(file);
 			verify(DriveSync, atLeastOnce()).deleteFile(file);
 
-		
 			t.interrupt();
 		}
 
