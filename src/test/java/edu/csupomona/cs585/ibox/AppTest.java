@@ -65,11 +65,11 @@ public class AppTest extends TestCase {
 
 			// Creating a new file
 			File file = new File(ConvertedDir + "/" + "testingFile.txt");
-			if (!file.exists()) {
-				file.createNewFile();
-			}else{
-				System.out.println("already exist");
-			}
+			if (file.createNewFile()){
+				System.out.println("File is created!");
+				}else{
+				System.out.println("File already exists.");
+				}
 
 			// Updating the file by adding text
 			PrintWriter writeInTheFile = new PrintWriter(file);
