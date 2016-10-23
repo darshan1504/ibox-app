@@ -20,7 +20,7 @@ import edu.csupomona.cs585.ibox.sync.GoogleDriveFileSyncManager;
 import edu.csupomona.cs585.ibox.sync.GoogleDriveServiceProvider;
 
 public class AppIntegrationTest {
-	private Drive googleDriveClient;
+	/*private Drive googleDriveClient;
 	public WatchDir watchdir;
 
 	@Before
@@ -64,4 +64,3 @@ public class AppIntegrationTest {
 		 * + e); } return true; }
 		 */
 	}
-}
