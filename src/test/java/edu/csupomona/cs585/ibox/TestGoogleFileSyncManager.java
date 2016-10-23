@@ -31,11 +31,11 @@ public class TestGoogleFileSyncManager extends TestCase {
 	public ArrayList<File> arrayList = new ArrayList<File>();
 	public com.google.api.services.drive.Drive.Files.List mockDriveFilesList = mock(
 			com.google.api.services.drive.Drive.Files.List.class);
-	public FileList fileListObj = new FileList();
-	public File FileObj = new File();
+	public FileList fileListObject = new FileList();
+	public File FileObject = new File();
 	public com.google.api.services.drive.Drive.Files.Update mockDriveUpdate = mock(com.google.api.services.drive.Drive.Files.Update.class);
 	public com.google.api.services.drive.Drive.Files.Delete mockDriveDelete = mock(com.google.api.services.drive.Drive.Files.Delete.class);
-	public File newFileObj = new File();
+	public File newFileObject = new File();
 	
 	
 
@@ -60,16 +60,16 @@ public class TestGoogleFileSyncManager extends TestCase {
 		String fileID = "1111";
 		String FileName = "TestingTest.txt";
 
-		FileObj.setTitle(FileName);
-		FileObj.setId(fileID);
-		arrayList.add(FileObj);
-		fileListObj.setItems(arrayList);
+		FileObject.setTitle(FileName);
+		FileObject.setId(fileID);
+		arrayList.add(FileObject);
+		fileListObject.setItems(arrayList);
 		when(mockJavaFile.getName()).thenReturn(FileName);
 		when(drivefiles.list()).thenReturn(mockDriveFilesList);
-		when(mockDriveFilesList.execute()).thenReturn(fileListObj);
+		when(mockDriveFilesList.execute()).thenReturn(fileListObject);
 		when(mockDrive.files()).thenReturn(drivefiles);
 		when(drivefiles.update(isA(String.class), isA(File.class), isA(AbstractInputStreamContent.class))).thenReturn(mockDriveUpdate);
-		when(mockDriveUpdate.execute()).thenReturn(newFileObj);
+		when(mockDriveUpdate.execute()).thenReturn(newFileObject);
 		DriveSync.updateFile(mockJavaFile);
 		verify(mockJavaFile, atLeast(1)).getName();
 		verify(drivefiles).list();
@@ -88,13 +88,13 @@ public class TestGoogleFileSyncManager extends TestCase {
 		 
 		String fileID = "1111";
 		String FileName = "TestingTest.txt";
-		FileObj.setTitle(FileName);
-		FileObj.setId(fileID);
-		fileListObj.setItems(arrayList);
-		arrayList.add(FileObj);
+		FileObject.setTitle(FileName);
+		FileObject.setId(fileID);
+		fileListObject.setItems(arrayList);
+		arrayList.add(FileObject);
 		when(mockJavaFile.getName()).thenReturn(FileName);
 		when(drivefiles.list()).thenReturn(mockDriveFilesList);
-		when(mockDriveFilesList.execute()).thenReturn(fileListObj);
+		when(mockDriveFilesList.execute()).thenReturn(fileListObject);
 		when(mockDrive.files()).thenReturn(drivefiles);
 		when(drivefiles.delete(fileID)).thenReturn(mockDriveDelete);
 		when(mockDriveDelete.execute()).thenReturn(null);
