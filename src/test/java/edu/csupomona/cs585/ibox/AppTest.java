@@ -48,7 +48,7 @@ public class AppTest extends TestCase {
 	 */
 	public void testApp() throws Exception {
 		// Getting path of directory
-		try {
+		/*try {
 			String LocalDir = System.getProperty("user.dir");
 			Path ConvertedDir = Paths.get(LocalDir);
 
@@ -86,6 +86,6 @@ public class AppTest extends TestCase {
 
 		catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 }
