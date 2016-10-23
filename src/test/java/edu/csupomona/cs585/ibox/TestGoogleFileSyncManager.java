@@ -58,7 +58,7 @@ public class TestGoogleFileSyncManager extends TestCase {
 
 		System.out.println("Test method for updating a file");
 		String fileID = "1111";
-		String FileName = "FileNameForTest.txt";
+		String FileName = "TestingTest.txt";
 
 		FileObj.setTitle(FileName);
 		FileObj.setId(fileID);
@@ -87,7 +87,7 @@ public class TestGoogleFileSyncManager extends TestCase {
 		 System.out.println("Test method for deleting a file");
 		 
 		String fileID = "1111";
-		String FileName = "FileNameForTest.txt";
+		String FileName = "TestingTest.txt";
 		FileObj.setTitle(FileName);
 		FileObj.setId(fileID);
 		fileListObj.setItems(arrayList);
